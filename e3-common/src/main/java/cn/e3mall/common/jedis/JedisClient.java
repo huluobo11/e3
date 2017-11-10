@@ -1,0 +1,25 @@
+package cn.e3mall.common.jedis;
+
+import java.util.List;
+
+/**
+ * 连接redis用的接口.
+ * @date 2017年9月1日
+ * @author Administrator
+ * @project e3-common
+ */
+public interface JedisClient {
+
+	String set(String key, String value);
+	String get(String key);
+	Boolean exists(String key);
+	Long expire(String key, int seconds);
+	Long ttl(String key);
+	Long incr(String key);
+	Long hset(String key, String field, String value);
+	String hget(String key, String field);
+	Long hdel(String key, String... field);
+	Boolean hexists(String key, String field);
+	List<String> hvals(String key);
+	Long del(String key);
+}
